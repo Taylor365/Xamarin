@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    Title="Contacts"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ContactsApp"
+             x:Class="ContactsApp.MainPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="icon.png" Text="New" Activated="Handle_Activate"/>
+    </ContentPage.ToolbarItems>
+    <StackLayout Orientation="Horizontal">
+        <ListView x:Name="listView" ItemSelected="Handle_Selection">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding FullName}">
+                        <TextCell.ContextActions>
+                            <MenuItem Text="Delete" Clicked="Delete_Clicked" IsDestructive="True" CommandParameter="{Binding .}"/>
+                        </TextCell.ContextActions>
+                    </TextCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
