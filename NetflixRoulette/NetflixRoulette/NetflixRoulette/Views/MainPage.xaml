@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             Title="Movies"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:NetflixRoulette"
+             x:Class="NetflixRoulette.Views.MainPage">
+
+    <StackLayout Padding="20">
+        <StackLayout Orientation="Horizontal">
+            <SearchBar x:Name="search" Placeholder="Search" TextChanged="Handle_TextChanged"/>
+            <!--<Button Text="Cancel" Clicked="OnCancel"/>-->
+        </StackLayout>
+        <ListView x:Name="postsListView" ItemSelected="Handle_Selection">
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ImageCell x:Name="movie" ImageSource="{Binding Poster}" Text="{Binding Title}" Detail="{Binding Year}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

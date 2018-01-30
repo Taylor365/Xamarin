@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage Title="{Binding Title}"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NetflixRoulette.Views.MoviesDetails">
+    <ScrollView>
+        <StackLayout Padding="20">
+            <Image Source="{Binding Poster}"/>
+            <Label HorizontalTextAlignment="Center" FontSize="30" Text="{Binding Title}"/>
+            <Label VerticalOptions="FillAndExpand" Text="{Binding Overview}"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
