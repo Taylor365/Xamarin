@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BindingExample.MainPage">
+  <StackLayout>
+    <StackLayout Orientation="Horizontal">
+      <Label Text="Models:"/>
+      <Button Text="Picker" Command="{Binding OnPickerSelectedCommand}"/>
+      <Button Text="List" Command="{Binding OnListSelectedCommand}"/>
+    </StackLayout>
+    <StackLayout IsVisible="{Binding IsPickerSelected}" Orientation="Vertical">
+      <Label Text="Select a Value:" />
+      <Picker
+        Title="Picker"
+        ItemsSource="{Binding Numbers}" BindingContext="{Binding SelectedModel}"
+        ItemDisplayBinding="{Binding Name}"/>
+    </StackLayout>
+    <StackLayout IsVisible="{Binding IsListSelected}" Orientation="Vertical">
+      <Label Text="Select Options:"/>
+      <ListView ItemsSource="{Binding Numbers}" BindingContext="{Binding SelectedModel}"
+                HasUnevenRows="True"
+                SeparatorColor="Gray"
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                <Label Text="{Binding Name}" TextColor="Black" FontSize="Small" 
+                             HorizontalOptions="StartAndExpand"/>
+                <Switch HorizontalOptions="End"/>
+              </StackLayout>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    </StackLayout>
+  </StackLayout>
+</ContentPage>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Microsoft.Mvpui;assembly=Mvpui"
+             xmlns:converters="clr-namespace:Microsoft.Mvpui.Converters;assembly=Mvpui"
+			 xmlns:xamlresources="clr-namespace:Microsoft.Mvpui.XamlResources;assembly=Mvpui"
+			 xmlns:mvpHelpers="clr-namespace:Microsoft.Mvp.Helpers;assembly=Mvp"
+             x:Class="Microsoft.Mvpui.App">
+    <Application.Resources>
+
+		<local:ResourceDictionary>
+			<local:ResourceDictionary.MergedDictionaries>
+				<xamlresources:Styles />
+				<xamlresources:DataTemplates />
+			</local:ResourceDictionary.MergedDictionaries>
+			
+			<converters:ContributionToIconConverter x:Key="ContributionToIconConverter" />
+			<mvpHelpers:TranslateExtensionConverter x:Key="TranslateExtensionConverter"/>
+
+		</local:ResourceDictionary>
+
+    </Application.Resources>
+</Application>

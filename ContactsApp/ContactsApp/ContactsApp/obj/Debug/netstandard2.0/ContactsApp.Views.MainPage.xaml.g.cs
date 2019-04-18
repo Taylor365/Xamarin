@@ -11,8 +11,7 @@
 namespace ContactsApp {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\ctaylor\\source\\repos\\Xamarin\\ContactsApp\\ContactsApp\\ContactsApp\\Views\\M" +
-        "ainPage.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("F:\\Xamarin\\ContactsApp\\ContactsApp\\ContactsApp\\Views\\MainPage.xaml")]
     public partial class MainPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

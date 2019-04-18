@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MultipleViewModelSample" 
+             x:Class="MultipleViewModelSample.View2">
+  <ContentView.Content>
+    <StackLayout IsVisible="{Binding IsVM2Visible }">
+      <Label Text="{Binding LabelText}" 
+               FontSize="50"
+               FontAttributes="Bold"
+               HorizontalOptions="Center" />
+
+      <FlexLayout Direction="Column" JustifyContent="SpaceAround" AlignItems="Center">
+        <Frame HeightRequest="20" WidthRequest="50">
+          <Label Text="Show" HorizontalTextAlignment="Center" TextColor="Black">
+            <Label.GestureRecognizers>
+              <TapGestureRecognizer Command="{Binding OnPageShowTappedCommand}"/>
+            </Label.GestureRecognizers>
+          </Label>
+        </Frame>
+        <Frame HeightRequest="20" WidthRequest="50">
+          <Label Text="Hide" HorizontalTextAlignment="Center" TextColor="Black">
+            <Label.GestureRecognizers>
+              <TapGestureRecognizer Command="{Binding OnPageHideTappedCommand}"/>
+            </Label.GestureRecognizers>
+          </Label>
+        </Frame>
+      </FlexLayout>
+    </StackLayout>
+  </ContentView.Content>
+</ContentView>

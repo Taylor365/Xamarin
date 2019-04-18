@@ -11,8 +11,7 @@
 namespace ContactsApp {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\ctaylor\\source\\repos\\ContactsApp\\ContactsApp\\ContactsApp\\Views\\ContactDe" +
-        "tail.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("F:\\Xamarin\\ContactsApp\\ContactsApp\\ContactsApp\\Views\\ContactDetail.xaml")]
     public partial class ContactDetail : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

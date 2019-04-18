@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CustomRenderers"
+             x:Class="CustomRenderers.MainPage">
+  <StackLayout Orientation="Vertical">
+    <StackLayout Padding="20" Spacing="40">
+
+      <Label Text="Xamarin Forms" TextColor="DodgerBlue" FontSize="44"/>
+
+      <Label Text="Custom Renderer" TextColor="DeepPink" FontSize="40"/>
+
+      <Entry Text="Default Entry"
+               FontSize="30"/>
+
+      <local:RoundedEntry Text="Custom Entry"
+                            FontSize="30" />
+    </StackLayout>
+    <StackLayout Orientation="Horizontal" Spacing="16">
+      <local:Checkbox CheckedCommandParameter="{Binding .}" 
+                      IsChecked="{Binding UseExistingAddress}" 
+                      VerticalOptions="Center" 
+                      OutlineColor="{DynamicResource PrimaryTextColor}" 
+                      CheckedOutlineColor="{DynamicResource PrimaryTextColor}" 
+                      CheckColor="{DynamicResource PrimaryColor}"  
+                      WidthRequest="40" 
+                      HeightRequest="40"/>
+      
+      <Label Text="Use existing address" VerticalOptions="Center" Style="{DynamicResource BodySecondary}"/>
+    </StackLayout>
+  </StackLayout>
+</ContentPage>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Microsoft.Mvpui.ContributionsPage"
+			 x:Name="contributionsPage"
+	xmlns:fab="clr-namespace:Refractored.FabControl;assembly=Refractored.FabControl"
+             Title="{Binding TabTitleForContributions}">
+ 
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Text="{Binding AddButton}" Clicked="AddContribution_Clicked" Icon="toolbar_add.png" x:Name="ToolbarAddContribution" />
+	</ContentPage.ToolbarItems>
+	<ContentPage.Content>
+		<AbsoluteLayout VerticalOptions="FillAndExpand" 
+						HorizontalOptions="FillAndExpand">
+			<ListView x:Name="ListViewContributions" 
+						  ItemsSource="{Binding List}"
+						  RowHeight="70"
+						  ItemSelected="OnItemSelected"
+					      ItemTapped="OnItemTapped"
+						  AbsoluteLayout.LayoutFlags="All"
+						  AbsoluteLayout.LayoutBounds="0,0,1,1"
+						  ItemAppearing="OnItemAppearing"
+						  IsPullToRefreshEnabled="true"
+						  RefreshCommand="{Binding RefreshCommand}"
+						  IsRefreshing="{Binding IsBusy, Mode=OneWay}">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell IsEnabled="{Binding ContributionEnableEditDelete}">
+							<ViewCell.ContextActions>
+								<MenuItem Clicked="OnDelete" CommandParameter="{Binding .}" Text="{Binding BindingContext.DeleteButton,Source= {x:Reference contributionsPage} }" IsDestructive="True" />
+							</ViewCell.ContextActions>
+							<Grid RowSpacing="0" ColumnSpacing="0">
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="65" />
+									<ColumnDefinition Width="*" />
+								</Grid.ColumnDefinitions>
+
+								<Image WidthRequest="45" HeightRequest="45"
+									   VerticalOptions="Center" HorizontalOptions="Center"
+									   Source="{Binding ., Converter={StaticResource ContributionToIconConverter}}"
+									   Grid.Column="0"/>
+
+								<Grid Grid.Column="1" Margin="0,0,10,0"
+									  RowSpacing="5" ColumnSpacing="0">
+									<Grid.RowDefinitions>
+										<RowDefinition Height="*" />
+										<RowDefinition Height="Auto" />
+										<RowDefinition Height="Auto" />
+										<RowDefinition Height="*" />
+									</Grid.RowDefinitions>
+
+									<Label Text="{Binding Title}" LineBreakMode="TailTruncation"
+										   TextColor="{StaticResource SecondaryTextColor}" 
+										   FontSize="16" FontAttributes="Bold"
+										   Style="{StaticResource BoldLabel}"
+										   Grid.Row="1"/>
+
+									<StackLayout Orientation="Horizontal"
+												 Grid.Row="2">
+										<Label Text="{Binding DataFormat}" TextColor="{StaticResource PrimaryTextColor}"
+											   FontSize="{StaticResource XSmallProfileLabelFontSize}" />
+										<Label Text="|" TextColor="{StaticResource PrimaryTextColor}"
+											   FontSize="{StaticResource XSmallProfileLabelFontSize}" />
+										<StackLayout Orientation="Horizontal">
+											<Label Text="{Binding LabelTextOfContribution, Converter={StaticResource TranslateExtensionConverter}}"
+												   TextColor="{StaticResource PrimaryTextColor}" FontSize="{StaticResource XSmallProfileLabelFontSize}" />
+											<Label Text="{Binding AnnualReach}" TextColor="{StaticResource PrimaryTextColor}"
+												   FontSize="{StaticResource XSmallProfileLabelFontSize}" />
+										</StackLayout>
+									</StackLayout>
+								</Grid>
+							</Grid>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+			<fab:FloatingActionButtonView
+				ImageName="toolbar_add.png"
+				ColorNormal="{StaticResource Primary}"
+				ColorPressed="{StaticResource PrimaryDark}"
+				ColorRipple="{StaticResource PrimaryDark}"
+				x:Name="FloatingActionButtonAdd"
+				IsVisible="False"
+				AbsoluteLayout.LayoutFlags="PositionProportional"
+				AbsoluteLayout.LayoutBounds="1, 1, AutoSize, AutoSize"/>
+		</AbsoluteLayout>
+	</ContentPage.Content>
+</ContentPage>

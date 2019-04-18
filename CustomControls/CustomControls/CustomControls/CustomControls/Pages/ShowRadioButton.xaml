@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ctrls="clr-namespace:CustomControls.Controls"
+             x:Class="CustomControls.Pages.ShowRadioButton">
+    <ContentPage.Content>
+    <StackLayout>
+      <ListView ItemsSource="{Binding ListOfRadioButtons}"
+                SelectedItem="{Binding SelectedRadioButton}">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+      <ctrls:RadioButton x:Name="cbIndia" 
+                         Title="India" 
+                         IsChecked="False" 
+                         BorderImageSource="radioButtonUnchecked" 
+                         CheckedBackgroundImageSource="radioButtonChecked" 
+                         CheckmarkImageSource="radioButtonUnchecked" />
+      <ctrls:RadioButton x:Name="cbJapan" 
+                         Title="Japan" 
+                         IsChecked="False" 
+                         BorderImageSource="radioButtonUnchecked" 
+                         CheckedBackgroundImageSource="radioButtonChecked" 
+                         CheckmarkImageSource="radioButtonUnchecked" />
+    </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

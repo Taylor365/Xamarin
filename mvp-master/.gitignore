@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Back.png
+MVP/.droidres/.mvp.vs2017.droidres.db
+/.vs

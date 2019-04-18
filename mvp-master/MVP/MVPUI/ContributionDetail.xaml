@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Microsoft.Mvpui.ContributionDetail"
+             BackgroundColor="#FFFFFF"
+			 Title="{Binding ContributionActionType}">
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Text="{Binding CloseButton}" x:Name="ToolbarClose" Icon="toolbar_close.png" />
+	</ContentPage.ToolbarItems>
+	<Grid>
+		<StackLayout Spacing="0">
+			<ScrollView Padding="0" Margin="0" HorizontalOptions="FillAndExpand">
+				<StackLayout>
+					<StackLayout Padding="20">
+
+						<Label Text="{Binding LabelForContributionType}" FontSize="{StaticResource NormalLabelFontSize}" TextColor="{StaticResource SecondaryTextColor}" VerticalTextAlignment="End" />
+						<Picker HeightRequest="40" x:Name="contributionTypeSelector" SelectedIndexChanged="OnContributionTypeSelectedIndexChanged" />
+
+						<Label Text="{Binding LabelForContributionArea}" FontSize="{StaticResource NormalLabelFontSize}"  TextColor="{StaticResource SecondaryTextColor}" VerticalTextAlignment="End" />
+						<Picker HeightRequest="40"  x:Name="ContributionAreaSelector" TextColor="Black" />
+
+						<Label Text="{Binding LabelForContributionDate}" FontSize="{StaticResource NormalLabelFontSize}"  TextColor="{StaticResource SecondaryTextColor}" VerticalTextAlignment="End" />
+						<DatePicker x:Name="ContributionDateSelector" Date="{Binding MyContribution.StartDate}" TextColor="Black" />
+
+						<StackLayout Spacing="0" Orientation="Horizontal">
+							<Label Text="{Binding LabelForContributionTitle}" FontSize="{StaticResource NormalLabelFontSize}"  TextColor="{StaticResource SecondaryTextColor}" VerticalTextAlignment="End" />
+							<Label Text="{Binding ErrorMessageForTitle}"  FontSize="{StaticResource NormalLabelFontSize}" TextColor="Red" VerticalTextAlignment="End" />
+						</StackLayout>
+						<Entry  x:Name="entryTitle" Text="{Binding MyContribution.Title}" TextColor="Black" />
+
+						<Label Text="{Binding LabelForVisibility}" FontSize="{StaticResource NormalLabelFontSize}" TextColor="{StaticResource SecondaryTextColor}" VerticalTextAlignment="End" />
+						<Picker x:Name="PersonGroupSelector" TextColor="Black" />
+
+						<StackLayout Spacing="0" Orientation="Horizontal">
+							<Label Text="{Binding LabelForURL}" FontSize="{StaticResource NormalLabelFontSize}"  TextColor="{StaticResource SecondaryTextColor}" VerticalTextAlignment="End" />
+							<Label Text="{Binding ErrorMessageForUrl}" FontSize="{StaticResource NormalLabelFontSize}" TextColor="Red" IsVisible="{Binding IsNeededUrl}" VerticalTextAlignment="End" />
+						</StackLayout>
+						<Entry x:Name="entryURL" Keyboard="Url" TextColor="Black" Text="{Binding MyContribution.ReferenceUrl}" />
+
+						<Label Text="{Binding LabelForDescription}" FontSize="{StaticResource NormalLabelFontSize}" TextColor="{StaticResource SecondaryTextColor}" VerticalTextAlignment="End" />
+						<Editor HeightRequest="180" BackgroundColor="#10000000" x:Name="entryDescription" TextColor="Black" Text="{Binding MyContribution.Description}" />
+
+						<StackLayout Spacing="0" Orientation="Horizontal">
+							<Label FontSize="{StaticResource NormalLabelFontSize}" Text="{Binding AnnualQuantityTipText}"  TextColor="{StaticResource SecondaryTextColor}" VerticalTextAlignment="End" />
+							<Label FontSize="{StaticResource NormalLabelFontSize}" Text="{Binding ErrorMessageForAnnualQuantity}" TextColor="Red" IsVisible="{Binding IsNeededAnnualQuantity}" VerticalTextAlignment="End" />
+						</StackLayout>
+						<Entry x:Name="entryAnnualQuantity" Keyboard="Numeric" TextColor="Black" Text="{Binding MyContribution.AnnualQuantity}" />
+
+						<StackLayout IsVisible="{Binding IsNeededSecondAnnualQuantity}">
+							<StackLayout Spacing="0" Orientation="Horizontal">
+								<Label FontSize="{StaticResource NormalLabelFontSize}" Text="{Binding SecondAnnualQuantityTipText}" TextColor="{StaticResource SecondaryTextColor}" VerticalTextAlignment="End" />
+								<Label FontSize="{StaticResource NormalLabelFontSize}" Text="{Binding ErrorMessageForSecondAnnualQuantity}" TextColor="Red" VerticalTextAlignment="End" />
+							</StackLayout>
+							<Entry x:Name="entrySecondAnnualQuantity" Keyboard="Numeric" TextColor="Black" Text="{Binding MyContribution.SecondAnnualQuantity}" />
+						</StackLayout>
+
+						<StackLayout Spacing="0" Orientation="Horizontal">
+							<Label FontSize="{StaticResource NormalLabelFontSize}" Text="{Binding AnnualReachTipText}"  TextColor="{StaticResource SecondaryTextColor}" VerticalTextAlignment="End" />
+							<Label FontSize="{StaticResource NormalLabelFontSize}" Text="{Binding ErrorMessageForAnnualReach}" TextColor="Red" VerticalTextAlignment="End" />
+						</StackLayout>
+						<Entry x:Name="entryAnnualReach" Keyboard="Numeric" TextColor="Black" Text="{Binding MyContribution.AnnualReach}" />
+
+					</StackLayout>
+
+
+
+				</StackLayout>
+
+			</ScrollView>
+			<Button TextColor="White"
+					BorderRadius="0"
+					BackgroundColor="{StaticResource PrimaryDark}"  
+					IsEnabled="{Binding IsNotBusy}"
+					Clicked="ButtonSaveClicked" Text="{Binding SaveButton}"
+                    HorizontalOptions="FillAndExpand" />
+		</StackLayout>
+	</Grid>
+
+</ContentPage>

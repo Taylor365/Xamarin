@@ -712,11 +712,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ctaylor\\source\\repos\\Xamarin\\ContactsApp\\ContactsApp\\ContactsApp.Android\\ContactsApp.Android.csproj",
+      "projectUniqueName": "F:\\Xamarin\\ContactsApp\\ContactsApp\\ContactsApp.Android\\ContactsApp.Android.csproj",
       "projectName": "ContactsApp.Android",
-      "projectPath": "C:\\Users\\ctaylor\\source\\repos\\Xamarin\\ContactsApp\\ContactsApp\\ContactsApp.Android\\ContactsApp.Android.csproj",
+      "projectPath": "F:\\Xamarin\\ContactsApp\\ContactsApp\\ContactsApp.Android\\ContactsApp.Android.csproj",
       "packagesPath": "C:\\Users\\ctaylor\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ctaylor\\source\\repos\\Xamarin\\ContactsApp\\ContactsApp\\ContactsApp.Android\\obj\\",
+      "outputPath": "F:\\Xamarin\\ContactsApp\\ContactsApp\\ContactsApp.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
@@ -733,8 +733,8 @@
       "frameworks": {
         "monoandroid71": {
           "projectReferences": {
-            "C:\\Users\\ctaylor\\source\\repos\\Xamarin\\ContactsApp\\ContactsApp\\ContactsApp\\ContactsApp.csproj": {
-              "projectPath": "C:\\Users\\ctaylor\\source\\repos\\Xamarin\\ContactsApp\\ContactsApp\\ContactsApp\\ContactsApp.csproj"
+            "F:\\Xamarin\\ContactsApp\\ContactsApp\\ContactsApp\\ContactsApp.csproj": {
+              "projectPath": "F:\\Xamarin\\ContactsApp\\ContactsApp\\ContactsApp\\ContactsApp.csproj"
             }
           }
         }

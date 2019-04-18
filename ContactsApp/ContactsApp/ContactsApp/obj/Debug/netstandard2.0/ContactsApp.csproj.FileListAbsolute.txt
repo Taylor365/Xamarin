@@ -22,3 +22,14 @@ C:\Users\ctaylor\source\repos\Xamarin\ContactsApp\ContactsApp\ContactsApp\obj\De
 C:\Users\ctaylor\source\repos\Xamarin\ContactsApp\ContactsApp\ContactsApp\obj\Debug\netstandard2.0\ContactsApp.AssemblyInfo.cs
 C:\Users\ctaylor\source\repos\Xamarin\ContactsApp\ContactsApp\ContactsApp\obj\Debug\netstandard2.0\ContactsApp.dll
 C:\Users\ctaylor\source\repos\Xamarin\ContactsApp\ContactsApp\ContactsApp\obj\Debug\netstandard2.0\ContactsApp.pdb
+F:\Xamarin\ContactsApp\ContactsApp\ContactsApp\bin\Debug\netstandard2.0\ContactsApp.deps.json
+F:\Xamarin\ContactsApp\ContactsApp\ContactsApp\bin\Debug\netstandard2.0\ContactsApp.dll
+F:\Xamarin\ContactsApp\ContactsApp\ContactsApp\bin\Debug\netstandard2.0\ContactsApp.pdb
+F:\Xamarin\ContactsApp\ContactsApp\ContactsApp\obj\Debug\netstandard2.0\ContactsApp.csproj.CoreCompileInputs.cache
+F:\Xamarin\ContactsApp\ContactsApp\ContactsApp\obj\Debug\netstandard2.0\ContactsApp.App.xaml.g.cs
+F:\Xamarin\ContactsApp\ContactsApp\ContactsApp\obj\Debug\netstandard2.0\ContactsApp.Views.ContactDetail.xaml.g.cs
+F:\Xamarin\ContactsApp\ContactsApp\ContactsApp\obj\Debug\netstandard2.0\ContactsApp.Views.MainPage.xaml.g.cs
+F:\Xamarin\ContactsApp\ContactsApp\ContactsApp\obj\Debug\netstandard2.0\ContactsApp.AssemblyInfoInputs.cache
+F:\Xamarin\ContactsApp\ContactsApp\ContactsApp\obj\Debug\netstandard2.0\ContactsApp.AssemblyInfo.cs
+F:\Xamarin\ContactsApp\ContactsApp\ContactsApp\obj\Debug\netstandard2.0\ContactsApp.dll
+F:\Xamarin\ContactsApp\ContactsApp\ContactsApp\obj\Debug\netstandard2.0\ContactsApp.pdb

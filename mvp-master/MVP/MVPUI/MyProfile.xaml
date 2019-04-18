@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Microsoft.Mvpui.MyProfile"
+			 xmlns:circle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             BackgroundColor="{StaticResource BackgroundColor}"
+             Title="{Binding TabTitleForProfile}">
+    <ContentPage.ToolbarItems>
+		<ToolbarItem Text="{Binding SettingsButton}" x:Name="ToolBarSettings" Icon="toolbar_settings.png" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid Margin="0" Padding="0">
+            <ScrollView Margin="0" Padding="0" BackgroundColor="{StaticResource BlueBackgroundColor}">
+				<StackLayout BackgroundColor="{StaticResource BackgroundColor}" Padding="0,20,0,0" Spacing="0" Orientation="Vertical" VerticalOptions="StartAndExpand">
+                    <Label Grid.Row="0" Text="{Binding PersonName}" HorizontalTextAlignment="Center" HorizontalOptions="Center" TextColor="{StaticResource SecondaryTextColor}" FontAttributes="Bold" Style="{StaticResource BoldLabel}">
+                        <Label.FontSize>
+                            <OnPlatform x:TypeArguments="x:Double">
+                                <On Platform="iOS">20</On>
+                                <On Platform="Android">18</On>
+                                <On Platform="UWP">18</On>
+                            </OnPlatform>
+                        </Label.FontSize>
+                    </Label>
+
+                    <Label Text="{Binding MvpNumber}" HorizontalTextAlignment="Center" HorizontalOptions="Center" TextColor="{StaticResource PrimaryTextColor}" FontSize="12" />
+                    <circle:CircleImage x:Name="imgAvatar" Aspect="AspectFill" BorderThickness="3" BorderColor="{StaticResource PrimaryDark}" VerticalOptions="EndAndExpand" Margin="0,20,0,20" HorizontalOptions="CenterAndExpand" WidthRequest="127"  HeightRequest="127" Source="{Binding ProfilePhoto}" />
+
+					<Label Text="{Binding LabelForAwardCategories}" HorizontalTextAlignment="Center" HorizontalOptions="Center" TextColor="{StaticResource PrimaryTextColor}" FontSize="10" FontAttributes="Bold" Style="{StaticResource BoldLabel}" />
+                    <Label Text="{Binding AwardCategoriesValue}" HorizontalTextAlignment="Center" HorizontalOptions="Center" TextColor="{StaticResource SecondaryTextColor}" FontSize="14" FontAttributes="Bold" Style="{StaticResource BoldLabel}" />
+
+					<Grid Margin="0,20,0,20">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*" />
+							<ColumnDefinition Width="*" />
+						</Grid.ColumnDefinitions>
+						<StackLayout Margin="30,0,0,0" Grid.Column="0" Spacing="0" Orientation="Vertical">
+							<Label Text="{Binding LabelForFirstAward}" HorizontalTextAlignment="Center" HorizontalOptions="Center" TextColor="{StaticResource PrimaryTextColor}" FontSize="10" FontAttributes="Bold" Style="{StaticResource BoldLabel}" />
+							<Label Text="{Binding FirstAwardValue}" HorizontalTextAlignment="Center" HorizontalOptions="Center" TextColor="{StaticResource SecondaryTextColor}" FontSize="24" FontAttributes="Bold" Style="{StaticResource BoldLabel}" />
+						</StackLayout>
+						<StackLayout Margin="0,0,30,0" Grid.Column="1" Spacing="0" Orientation="Vertical">
+							<Label Text="{Binding LabelForNumberOfAward}" HorizontalTextAlignment="Center" HorizontalOptions="Center" TextColor="{StaticResource PrimaryTextColor}" FontSize="10" FontAttributes="Bold" Style="{StaticResource BoldLabel}" />
+							<Label Text="{Binding AwardsCountValue}" HorizontalTextAlignment="Center" HorizontalOptions="Center" TextColor="{StaticResource SecondaryTextColor}" FontSize="24" FontAttributes="Bold" Style="{StaticResource BoldLabel}" />
+						</StackLayout>
+					</Grid>
+
+					<ContentView BackgroundColor="{StaticResource BlueBackgroundColor}">
+						<Label Text="{Binding Description}" HorizontalTextAlignment="Start" VerticalOptions="Center" TextColor="#FFFFFF" FontSize="14"
+							   Margin="30,10,30,30"/>
+					</ContentView>
+				</StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
